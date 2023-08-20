@@ -1,0 +1,83 @@
+---
+title: "Project 2"
+author: "Padhraic Gorham | D22126376"
+output:
+  html_document:
+    df_print: paged
+---
+
+<hr>
+
+The `Recovery` dataset includes the following information:
+
++ `Time`: the amount of time until recovery from a certain disease;
++ `Status`: censoring status;
++ `Treatment`: categorical variable corresponding to the treatment group (1, 2, 3).
+
+To load the dataset:
+
+```{r, message = FALSE}
+library(survival)
+
+Recovery <- url('https://acaimo.github.io/teaching/data/survdata_Recovery.Rdata')
+load(Recovery)
+```
+
+### Question 1
+
++ Plot the Kaplan-Meier estimate for the survival functions for each treatment group (include a legend). 
++ Estimate the probability that an individual of treatment group 3 survives beyond time 0.3.
+
+```{r}
+# Plot the Kaplan-Meier estimate for the survival functions for each treatment group (include a legend).
+
+# Load the survival package
+library(survival)
+
+# Fit survival curves for each treatment group
+fit <- survfit(Surv(Time, Status) ~ Treatment, data = Recovery)
+
+# Plot survival curves
+plot(fit, main = "Kaplan-Meier Estimate by Treatment Group",
+     xlab = "Time", ylab = "Survival Probability", 
+     col = c("yellow", "blue", "darkgreen"), 
+     lty = 1:3)
+legend("topright", legend = c("Treatment 1", "Treatment 2", "Treatment 3"), 
+       col = c("yellow", "blue", "darkgreen"), lty = 1:3, cex = 0.8)
+
+# Estimate the probability of surviving beyond time 0.3 for treatment group 3
+fit2 <- survfit(Surv(Recovery$Time, Recovery$Status)~ Recovery$Treatment, data = Recovery)
+
+summary(fit2, times = 0.3)$surv[3]
+
+```
+
+### Question 2
+
++ Estimate a proportional hazard Cox model including `Treatment` as covariate. 
++ Estimate the baseline survival probability at time 0.4 
++ Estimate the survival probability of an individual from treatment group 2.
+
+```{r}
+library(survival)
+
+# Estimate a proportional hazard Cox model including `Treatment` as covariate
+fit <- coxph(Surv(Recovery$Time, Recovery$Status)~Recovery$Treatment, data = Recovery)
+summary(fit)
+
+# Estimate the baseline survival probability at time 0.4
+S0_NA <- survfit(coxph(Surv(Recovery$Time, Recovery$Status) ~ Recovery$Treatment, data = Recovery), type = "aalen")
+S0_04 <- summary(S0_NA, times = 0.4)$surv
+S0_04
+
+# Estimate the survival probability of an individual from treatment group 2.
+S2_NA <- survfit(coxph(Surv(Recovery$Time, Recovery$Status) ~ Recovery$Treatment == 2, data = Recovery), type = "aalen")
+summary(S2_NA)
+```
+
+### Question 3
+
+Create a 5 minute video where you interpret the parameter estimates obtained by using hazard ratio estimates.
+
+<hr>
+

@@ -1,0 +1,48 @@
+---
+title: "Project 2"
+author: "Name Surname | Student_Number"
+output:
+  html_notebook: default
+  pdf_document: default
+---
+
+<hr>
+
+1.  Suppose `X` is a continuous random variable with pdf $f(x) = 3x^2,$ for $−1 < x < 0.$ Use R to:
+
+    -   Find the probability that `X` is greater than -0.6.
+    -   Find the conditional probability that `X` is lower than -0.5 given that `X` is greater than -0.8.
+    -   Find the expectation and variance of `X`.
+
+```{r}
+# replace this comment with your code
+```
+
+2.  Suppose `X` is a normal distribution with mean 3 and variance 10. Use R to:
+
+    -   Find the conditional probability that `X` \< 4 given that `X` \> 1.
+    -   Find the value of `x1` such that the probability that `X` \> `x1` is 0.13.
+    -   Simulate a sample of size `n` = 1000 from `X` and calculate the absolute difference between a sample estimate of the probability that `X` \> 3.5 and its corresponding true value.
+
+```{r}
+# replace this comment with your code
+```
+
+3.  The width of bolts of fabric (`X`) is normally distributed with unknown mean and variance. A dataset containing a sample of `X` called `bwidth` can be loaded using the following code:
+
+```{r}
+load(url('https://acaimo.github.io/teaching/data/bwidth.RData'))
+```
+
+Complete the following task using R to:
+
+-   Visualise the distribution of the dataset.
+-   Estimate the sample mean and sample variance of `X`.
+-   Estimate the 95% confidence intervals for the mean and variance of `X`.
+-   Simulate a new sample of size `n` = 50 from `X` (using the sample variance of `bwidth` sample) and test (`alpha` = 0.05) the hypothesis that the mean is equal to 950mm against the alternative that the mean is different from 950mm. Draw your conclusion automatically using an `if()` function.
+
+```{r}
+# replace this comment with your code
+```
+
+<hr>

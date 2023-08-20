@@ -1,0 +1,89 @@
+---
+title: "Project 1"
+author: "Padhraic Gorham| D22126376"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+<hr>
+
+The `survey` dataset includes the answers that students of a certain school gave to the question about whether the lab activity improved their understanding of a certain topic (`1` = yes; `0` = no).
+
+To load the dataset:
+
+```{r, message = FALSE}
+survey <- url('https://acaimo.github.io/teaching/data/survey.RData')
+load(survey)
+```
+
+### Question 1
+
+-   Assume a Binomial model. Plot the likelihood function as a function of the parameter $\theta$ (the probability of success).
+-   Choose a (non-uniform) **symmetric** Beta prior distribution for the parameter $\theta$ and plot its pdf.
+-   Plot the corresponding posterior density.
+
+```{r}
+n <- length(survey)
+s <- sum(survey)
+f <- n - s
+
+alpha <- 2
+beta <- 4
+
+# Assume a Binomial model. Plot the likelihood function as a function of the 
+# parameter $\theta$ (the probability of success).
+curve(dbeta(x, shape1 = s, shape2 = f), 
+      from = 0, to = 1, yaxt = 'n', lwd = 2, col = "darkgreen", main = '',
+      xlab = expression(theta), ylab = '', ylim = c(0, 6))
+      
+# Choose a (non-uniform) symmetric Beta prior distribution for the parameter 
+# $\theta$ and plot its pdf
+curve(dbeta(x, shape1 = alpha, shape2 = beta), 
+      lwd = 2, add = TRUE, col = "red")
+
+# Plot the corresponding posterior density.
+curve(dbeta(x, shape1 = alpha + s, shape2 = beta + f), 
+      lwd = 2, add = TRUE, col = "blue")
+
+legend('topright', 
+       legend = c('Likelihood', 'Prior', 'Posterior'), 
+       col = c("darkgreen", "red", "blue"), lty = 1, lwd = 2)
+
+```
+
+### Question 2
+
+-   Find the posterior mean.
+-   Find the posterior probability that $\theta$ is greater than 0.56.
+-   Find the 90% high posterior density interval for $\theta.$
+
+```{r}
+# Calculate the posterior mean
+posterior.mean  <- (alpha + s) / (alpha + s + beta + f)
+posterior.mean
+
+# Find the posterior probability that $\theta$ is greater than 0.56
+pbeta(1-0.56, shape1 = alpha + s, shape2 = beta + f)
+
+# Find the 90% high posterior density interval for $\theta$
+l <- qbeta(0.025, shape1 = alpha + s, shape2 = beta + f)
+u <- qbeta(0.975, shape1 = alpha + s, shape2 = beta + f)
+c(l, u)
+```
+
+### Question 3
+
+Simulate 10 new survey data values using the posterior mean parameter value as probability of success $\theta.$
+
+```{r}
+# Simulate 10 new survey data values using the posterior mean
+set.seed(10)
+
+rbinom(10, size = 1, prob = posterior.mean)
+
+```
+
+<hr>

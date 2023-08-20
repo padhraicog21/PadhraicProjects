@@ -1,0 +1,87 @@
+---
+title: "Project 3"
+author: "Padhraic Gorham | D22126376"
+output: html_notebook
+---
+
+<hr>
+
+The `gangs` dataset (network object) describes the phone call interactions between 67 criminals. The following vertex attributes are also provided:
+
+-   `sex`: sex of the criminal (1 = male, 2 = female);
+-   `role`: role of the criminal (1 = leader, 2 = 'thug', 3 = 'lackie').
+
+To load the dataset:
+
+```{r}
+library(statnet)
+
+load(url('https://acaimo.github.io/teaching/data/gangs.Rdata'))
+gangs
+```
+
+### Question 1
+
+Plot the network graph using vertex colors to visualise the different role of each criminal. Include a legend. **Do not display isolates.**
+
+```{r}
+# remove isolates
+gangs <- delete.vertices(gangs, which(degree(gangs) == 0))
+
+# define colors for each role
+role_colors <- c("red", "green", "blue")
+
+# plot the network with vertex colors based on the 'role' attribute
+plot(gangs, 
+     vertex.col = role_colors[gangs %v% "role"],
+     vertex.cex = 3,
+     main = "Gangs Network",
+     edge.arrow.size = 1,
+     edge.color = "gray50",
+     )
+
+# Add a legend for the vertex colors
+legend("bottomright",
+       legend = c("Leader", "Thug", "Lackie"),
+       fill = role_colors,
+       bty = "n",
+       title = "Role",
+       cex = 1.2)
+```
+
+### Question 2
+
+Estimate a reciprocity model. Calculate the conditional odds ratio for the edge variable $Y_{3, 57}.$
+
+```{r}
+# Load the ergm package and Estimate a reciprocity model
+library(ergm)
+r_model <- ergm(gangs ~ edges + mutual)
+summary(r_model)$coefficients
+
+theta <- unname(r_model$coefficients)
+z_ij <- 1 + 2 * exp(theta[1]) + exp(2 * theta[1] + theta[2])
+exp(2 * theta[1] + theta[2]) / z_ij
+
+# Update network y by adding an edge between node 3 and 57
+y[3, 57] <- 1
+s_y_ij_1 <- summary(y ~ edges + mutual)
+
+# Update network y by removing the edge between node 3 and 57
+y[3, 57] <- 0
+s_y_ij_0 <- summary(y ~ edges + mutual)
+
+delta_y_ij <- s_y_ij_1 - s_y_ij_0
+delta_y_ij
+
+OR_y_ij <- c(exp(t(theta) %*% delta_y_ij))
+OR_y_ij
+
+```
+
+### Question 3
+
+Create a 5 minute video where you interpret the parameter estimates obtained by using the edge probabilities i.e., $\operatorname{Pr}\left(Y_{i j}=1 \mid Y_{j i}=1, \hat{\theta}_e, \hat{\theta}_r\right).$
+
+<hr>
+

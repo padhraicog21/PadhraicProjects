@@ -1,0 +1,48 @@
+---
+title: "Project 1"
+author: "Name Surname | Student_Number"
+output: html_notebook
+---
+
+<hr>
+
+1. Create a function which simulates the roll of `n` dice (where`n` > 3 is specified by the user), returns the value of the min value(s) and their positions in the sequence of values obtained and calculate their sum.
+
+```{r}
+# replace this comment with your code
+```
+
+2. Three dice (`D_1`, `D_2`, `D_3`) are rolled and let `S` be their sum. Use R to:
+  
+    + Print all the sequences such that `D_1` ana `D_2` are both greater than 4 and `S` < 14.
+  
+    + Find the conditional probability that `D_1` ana `D_2` are both greater than 3 given that `S` < 15.
+    
+    + Find the probability that either the sum of the first two dice is lower than 6 or that `S` < 7.
+
+```{r}
+# replace this comment with your code
+```
+
+3. A random variable `X` is defined as `x <- c(-2, -1, 0, 1, 2, 3, 4)`, `p_x <- c(0.10, 0.15, NA, 0.30, 0.05, 0.10, 0.10)`. Use R to:
+  
+    + Find the missing PMF value.
+    + Find the probability that `X` is lower than 1.
+    + Find the conditional probability that `X` is greater than -1 given that `X` is greater that -2.
+    
+```{r}
+# replace this comment with your code
+```  
+
+
+4. Suppose that 60% of voters support Proposition A. You poll a sample of 200 voters. Let `X` be the random variable modelling the number of voters of the sample supporting Proposition A. Use R to:
+
+    + Find the probability that `X` is greater than 130.
+    + Find the mode of `X`, i.e., the value of `X` that is most likely to be observed in the sample.
+    + Find the conditional probability that `X` is lower than 100 given that `X` is greater than 90.
+    
+```{r}
+# replace this comment with your code
+```
+
+<hr>
