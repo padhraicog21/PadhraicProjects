@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padhraic Gorham Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">Profile</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Data Analyst</p>
+            <h1><span>Padhraic Gorham</span><br></h1>
+        </div>
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/work-6.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Data Analyst Profile</h1>
+                <p>As a dedicated Data Analyst, I am passionate about turning data into insights that drive strategic decisions. With a strong foundation in statistics, mathematics, and programming, I excel in extracting valuable information from complex datasets. I thrive in collaborative environments and am dedicated to continuous learning and improvement.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li><span>Programming</span><br>Python, C++, SQL, RStudio, CSS, JavaScript, HTML</li>
+                        <li><span>Data Manipulation</span><br>SQL, Excel</li>
+                        <li><span>Data Visualization</span><br>Tableau, Power BI</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <h2>Experience</h2>
+                    <ul>
+                        <li><span>Gas Delivery Worker at Tulsk Fuels Ltd</span><br>As a Gas Delivery Worker, I ensure timely nationwide delivery of gas cylinders, maintaining positive customer experiences, conducting vehicle maintenance checks, organizing orders, and maintaining a clean yard.</p></li>
+                        <li><span>Construction Worker at Raymond Kerr Construction</span><br>I assisted tradespeople on construction sites, handled materials, used power tools safely and efficiently, demolished structures, maintained equipment, and managed various tasks around the site.</p></li>
+                        <li><span>Sales Assistant at Corrib Oil</span><br>As a Sales Assistant, I provided excellent customer service, managed deliveries and inventory, promoted sales, and ensured an organized store while handling money discreetly and accurately.</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <h2>Education</h2>
+                    <ul>
+                        <li><span>Certificate in Software Engineering</span><br>Athlone Campus, Bunnavally, Athlone, Co. Westmeath, N37 HD68<br>
+                            Grade 2.1<br>
+                            Subjects: Java fundamentals, Networking, Software Testing and Team Project</li>
+                        <li><span>Postgraduate Certificate in Applied Statistics</span><br>Technological University Dublin, Dublin, Ireland<br>
+                            Grade 2.1<br>
+                            Subjects: Applied Statistics, Regression Models, Probability, and Statistical Inference.</li>
+                        <li><span>Bachelor of Arts with Mathematics and Economics</span><br>National University of Ireland Galway, Galway, Ireland<br>
+                            Grade: 2:1<br>
+                            Subjects: Mathematics (Geometry, Complex Variables, Linear Algebra) and Economics (Macroeconomics, Microeconomics, Health Economics)</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certifications">
+                    <h2>Certifications</h2>
+                    <ul>
+                        <li><span>IT Certifications:</span></li>
+                        <ul>
+                            <li>CompTIA Network+ Certification</li>
+                            <li>CompTIA A+ Certification</li>
+                            <li>CompTIA Security+ Certification</li>
+                        </ul>
+                        <li><span>Certifications (from IACT eLearning):</span></li>
+                        <ul>
+                            <li>Microsoft Excel Certification</li>
+                            <li>Microsoft Word Certification</li>
+                            <li>Microsoft PowerPoint Certification</li>
+                            <li>Microsoft Access Certification</li>
+                        </ul>
+                        <li><span>Accredited Certifications (from Udemy):</span></li>
+                        <ul>
+                            <li>Tableau Certification</li>
+                            <li>SQL Certification</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------Services---------------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fas fa-chart-bar"></i>
+                <h2>Data Analysis</h2>
+                <p>Expert in utilizing statistical tools and programming languages like Python, R, and SQL for data manipulation, analysis, and visualization to extract meaningful insights from complex datasets.</p>
+                <a href="https://github.com/padhraicog21/PadhraicProjects.git">Learn more</a>
+            </div>
+            <div>
+                <i class="fas fa-laptop-code"></i>
+                <h2>Programming</h2>
+                <p>Proficient in multiple programming languages including Python, C++, and SQL, with a focus on creating efficient and well-structured code for solving complex problems.</p>
+                <a href="https://github.com/padhraicog21/PadhraicProjects.git">Learn more</a>
+            </div>
+            <div>
+                <i class="fas fa-users"></i>
+                <h2>Team Collaboration</h2>
+                <p>Skilled in working collaboratively within multidisciplinary teams, bringing a strong blend of technical skills and effective communication to achieve project goals and objectives.</p>
+                <a href="https://github.com/padhraicog21/PadhraicProjects.git">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------Portfolio---------------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Portforlio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/project1.jpg">
+                <div class="layer">
+                    <h3>Homepage Website</h3>
+                    <p>Designed and developed a personal homepage website showcasing my skills and achievements.</p>
+                    <a href="https://github.com/padhraicog21/PadhraicProjects.git"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/project2.jpeg">
+                <div class="layer">
+                    <h3>Python Fundamentals</h3>
+                    <p>Self-study and completion of online courses to master Python programming fundamentals.</p>
+                    <a href="https://github.com/padhraicog21/PadhraicProjects.git"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/project4.jpg">
+                <div class="layer">
+                    <h3>Data Analysis with SQL</h3>
+                    <p>Utilized SQL to analyze and manipulate data from multiple sources, showcasing proficiency in querying and managing datasets.</p>
+                    <a href="https://github.com/padhraicog21/PadhraicProjects.git"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/padhraicog21/PadhraicProjects.git" class="btn">See More on GitHub</a>
+    </div>
+</div>
+
+</div>
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact</h1>
+                <p><i class="fas fa-envelope"></i> padhraicog21@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +353 (089) 9828609</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/padhraic-gorham-0b5765250"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/padhraicog21/PadhraicProjects.git"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/padhraicog21/PadhraicProjects.git"><i class="fab fa-github"></i></a>
+                </div>
+                <a href="GorhamPadhraic.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <!-- Contact form -->
+                <form name='submit-to-google-sheet'>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Send Message</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Designed and developed by Padhraic Gorham.</p>
+    </div>
+</div>
+
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzClWBS32UtmnPRs83KnJNZhmB_QtIRqsp_GYQ0OfIxJw1eQMqsL_6VBCQcK59Np_L7AQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
