@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+body {
+	color: #171A20;
+
+	/* Paragraph */
+	font-family: Inter;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 200;
+	line-height: normal;
+}
+
+h1 {
+	margin: 1em;
+	color: #171A20;
+
+	/* H1 */
+	font-family: Inter;
+	font-size: 2em;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 1.36px;
+	
+	text-align: center;
+}
+
+.card-header {
+	color: #000;
+	/* H3 */
+	font-weight: 700;
+	line-height: normal;
+}
+
+/* .class-content {
+	color: #000;
+	font-family: Inter;
+	font-size: 0.8em;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+} */
+
+.white-button {
+	/* button text */
+	color: #171A20;
+	text-decoration: none;
+	/* Button */
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	
+	width: auto;
+	display: flex;
+	padding: 20px 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 3px solid #000;
+	background: #FFF;
+}
+
+.white-button:hover {
+	/* button text */
+	color: #FFF;
+	text-decoration: none;
+	/* Button */
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	
+	width: auto;
+	display: flex;
+	padding: 20px 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 3px solid #000;
+	background: #000;
+}
+
+.pink-button {
+	display: flex;
+	padding: 20px 55px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 20px;
+	background: #9C3F85;
+}
+/* end of site generic */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin: 20px; */    
+    padding: 0 2em 0 2em;
+    align-items: flex-start;
+}
+
+.card {
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* width: calc(30% - 10px); */
+    width: 30%;
+    margin-bottom: 20px;
+   /*  padding: 20px; */
+    /* box-sizing: border-box; */
+}
+
+.card img {
+    width: 100% !important;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 10px;
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<!-- start of head -->
+<h:head>
+	<h:outputStylesheet library="css" name="classScheduleStyle.css" />	
+	<title>Class Schedule</title>
+	 <style>
+        .expandable-section {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .expanded {
+            max-height: 10em; 
+        }
+    </style>
+   <script>
+        function toggleSection(button) {
+            var card = button.closest('.card');
+            var section = card.querySelector('.expandable-section');
+            section.classList.toggle('expanded');
+            
+         	// Toggle button text
+            button.value = section.classList.contains('expanded') ? 'Maybe Later' : 'Buy Now';
+        }
+    </script>
+</h:head>
+
+<!-- start of body -->
+<h:body>
+		
+<!-- 		<h:dataTable value="#{groupClassData.instructors}" var="instructor">
+		<h:column>
+			<f:facet name="header">Instructor Names</f:facet>
+			<h:outputText value="#{instructor.firstName}"></h:outputText>
+		</h:column>
+		
+	
+		</h:dataTable>
+		end of instructor table
+		
+		<h:dataTable value="#{groupClassData.classes}" var="groupclass">
+		
+		<h:column>
+			<f:facet name="header">Class Info</f:facet>
+			<h:outputText value="#{groupclass}"></h:outputText> 
+		</h:column>
+		
+	
+		</h:dataTable> -->
+		
+		<h1>Class Schedule</h1>
+		
+		<div class="card-container">
+			
+			<ui:repeat value="#{groupClassData.classes}" var="aClass">
+				<div class="card">
+					<!-- <img style="width: 50%" src="#{request.contextPath}/resources/images/classScheduleImages/circuits-1.jpg" /> -->
+					<img style="width: 50%" src="#{request.contextPath}/#{aClass.imagePath}" />
+					<div class="card-header">#{aClass.title}</div>
+					<div>Instructor: #{aClass.instructor.firstName} #{aClass.instructor.lastName}</div>
+					<div>Class Type: #{aClass.classType}</div>
+					<div>Date: #{aClass.date}</div>
+					<div>Time: #{aClass.startTime} - #{aClass.endTime}</div>
+					<div>#{aClass.description}</div>
+					<div>Spot Remaining: #{aClass.remainingCapacity}</div>
+					<div>Price: €#{aClass.centPrice/100}</div>
+					
+					<!-- lt is the entity code for the less than sign -->
+					<h:outputText rendered="#{aClass.remainingCapacity lt 1}" value="This class is all booked out. " />
+            			<h:commandButton rendered="#{aClass.remainingCapacity > 0}" type="button" 
+                             value="Buy Now" onclick="toggleSection(this)" />
+					
+					<!-- <button type="button" onclick="toggleSection(this)">Buy Now</button> -->
+					
+					<!-- expandable payment options -->
+	                <div class="expandable-section">
+	                    <h:form>
+	                        <h:commandButton value="Pay with cash on arrival" action="#{groupClassData.bookClass(aClass)}" />
+	                    </h:form>
+	                    <p style="color: red">Pay with PayPal is currently unavailable.</p>
+	                </div>
+				</div>
+			</ui:repeat>
+			
+		</div>
+		
+ 
+</h:body>
+</html>

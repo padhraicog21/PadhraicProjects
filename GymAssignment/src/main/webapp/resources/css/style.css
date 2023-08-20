@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+/* start of site generic */
+body {
+	color: #171A20;
+
+	/* Paragraph */
+	font-family: Inter;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+h1 {
+	margin: 0;
+	color: #171A20;
+
+	/* H1 */
+	font-family: Inter;
+	font-size: 68px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 1.36px;
+	
+	text-align: center;
+}
+
+h2 {
+	color: #171A20;
+	
+	/* H1 */
+	font-family: Inter;
+	font-size: 68px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 1.36px;
+}
+
+h3 {
+	color: #000;
+	
+	/* H3 */
+	font-family: Inter;
+	font-size: 38px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+/* .button-text{
+	color: #171A20;
+	text-decoration: none;
+	Button
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+} */
+
+.section {
+	padding: 0 0 60px 0;
+}
+
+.white-button {
+	/* button text */
+	color: #171A20;
+	text-decoration: none;
+	/* Button */
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	
+	width: auto;
+	display: flex;
+	padding: 20px 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 3px solid #000;
+	background: #FFF;
+}
+
+.white-button:hover {
+	/* button text */
+	color: #FFF;
+	text-decoration: none;
+	/* Button */
+	font-family: Inter;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	
+	width: auto;
+	display: flex;
+	padding: 20px 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 3px solid #000;
+	background: #000;
+}
+
+.pink-button {
+	display: flex;
+	padding: 20px 55px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 20px;
+	background: #9C3F85;
+}
+/* end of site generic */
+
+/* start of sec-3 */
+#sec-3 {
+	display: flex;
+	justify-content:space-between;
+}
+
+.text-container {
+	padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Vertically center the items */
+}
+/* end of sec-3 */
+
+/* start of sec-4 class options */
+
+#sec-4{
+	background: linear-gradient(180deg, #FFF 0%, #161418 59.72%, #030407 100%);
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width:90%;
+	margin: 0 auto; /* center the cards */
+}
+
+.card {
+	
+	border: none;
+	
+	color: #FFF;
+	text-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+	font-family: Inter;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	
+	margin: 10px;
+	width: 30%;
+    height: 447px;
+    flex-shrink: 0;
+    border-radius: 10%;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	background: rgba(156, 63, 133, 0.30);
+	
+	/* Hover styles */
+  	transition: transform 0.2s ease; /* Add smooth transition effect */
+
+} 
+
+.card:hover {
+	border: none;
+	
+	color: #FFF;
+	text-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+	font-family: Inter;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	
+	margin: 10px;
+	width: 30%;
+    height: 447px;
+    flex-shrink: 0;
+    border-radius: 10%;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	background: #B36F4D;
+	
+  	transform: scale(1.02); /* Enlarge the card on hover */
+  	/* Add other hover styles as desired */
+}
+
+.circuits-bg {
+	background: url("#{request.contextPath}/resources/images/index-circuits.png");
+	background-size: cover;
+} 
+
+.pilates-bg {
+	background: url("#{request.contextPath}/resources/images/index-pilates.png");
+	background-size: cover;
+} 
+
+.yoga-bg {
+	background: url("#{request.contextPath}/resources/images/index-yoga.png");
+	background-size: cover;
+} 
+
+.taichi-bg {
+	background: url("#{request.contextPath}/resources/images/index-taichi.png");
+	background-size: cover;
+} 
+
+.mindfulness-bg {
+	background: url("#{request.contextPath}/resources/images/index-mindfulness.png");
+	background-size: cover;
+} 
+
+/* start of style1. css*/

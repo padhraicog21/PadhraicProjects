@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<!-- start of head -->
+<h:head>
+	 <h:outputStylesheet library="css" name="style.css" />	
+	  <h:outputStylesheet name="styles1.css" library="css" />
+	<title>Welcome to Waterside Gym!</title>
+</h:head>
+
+<!-- start of body -->
+<h:body>
+
+<div id="header">
+        <div class="container">
+            <nav>
+    			<h:graphicImage name="logo.svg" library="images" />
+                <ul id="sidemenu">
+                    <li><a href="">About Waterside Gym</a></li>
+                    <li><a href="videos.xhtml">Free Training Videos</a></li>
+                    <li><a href="">Personal Training</a></li>
+                    <li><a href="">Group Classes</a></li>
+                    <li><a href="membership.xhtml">Memberships</a></li>
+                    <li><a href="">Log In</a></li>
+                </ul>
+            </nav>
+            <!-- <div class="header-text"> -->
+             <div class="h1">
+                <h1><span>Welcome to</span> Waterside Gym<br/></h1>
+                <p>The fitness facility for all your needs</p>
+            </div>
+        </div>
+    </div>
+    
+<!-- start of section 2 free training videos -->
+ <!-- <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Free Training Videos</h1>
+            <div class="work-list">
+                <div class="work">
+                    <h:graphicImage name="upper.jpg" library="images" />
+                    <div class="layer">
+                        <h3>Upper Body Workouts</h3>
+                        <p>Strengthen your upper body with our engaging and effective free workout videos. From sculpting your arms and shoulders to building a strong core, our expert trainers have curated a variety of exercises to help you reach your fitness goals.</p>
+                        <a href="videos.xhtml" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <h:graphicImage name="lower1.jpg" library="images" />
+                    <div class="layer">
+                        <h3>Lower Body Workouts</h3>
+                        <p>Get ready to target your lower body muscles with our dynamic and challenging free workout videos. Whether you want to tone your legs, strengthen your glutes, or improve overall lower body strength, we have the perfect workouts for you.</p>
+                        <a href="videos.xhtml" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <h:graphicImage name="cardio1.jpg" library="images" />
+                    <div class="layer">
+                        <h3>Cardio</h3>
+                        <p>Rev up your heart rate and burn calories with our energizing and fun free cardio workout videos. From high-intensity interval training (HIIT) to dance-based routines, you'll find a variety of cardio workouts to keep you motivated and in shape.</p>
+                        <a href="videos.xhtml" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="videos.xhtml" class="btn">Explore More</a>
+    </div> -->
+ 
+ <!-- start of section 3 personal training options -->
+ <div id="sec-3" class="section">
+ 	<div class="text-container">
+ 		
+	 	<h1>Personal Training</h1>
+	 	<p style="margin-top: 50px">
+	 	Our personal training program is designed to help you achieve your fitness goals faster and more effectively. Our certified personal trainers are dedicated to providing individualized workout plans tailored to your specific needs, whether you're a beginner looking to kickstart your fitness journey or an experienced athlete aiming to take your performance to the next level. With our expert guidance, motivation, and support, you'll gain the knowledge and confidence to push your limits, break barriers, and transform your body.
+	 	</p>
+	 	<a href="#sec-5" class="white-button" style="margin-top: 50px"> Purchase Membership </a> 
+	 	
+ 	</div>
+ 	 <img style="width: 50%" src="#{request.contextPath}/resources/images/index-personal-trainer.png" alt="personal trainer" />
+ 	
+ </div>
+ <!-- end of section 3 personal training options -->
+ 
+ <!-- start of section 4 class options -->
+ <div id="sec-4" class="section">
+ 	<h1 style="margin: 50px 0;">Group Class</h1>
+ 	<h:form styleClass="card-container">
+	    <h:commandButton styleClass="circuits-bg card" value="Circuits" action="classSchedule.xhtml" />
+	    <h:commandButton styleClass="pilates-bg card" value="Pilates" action="classSchedule.xhtml" />
+	    <h:commandButton styleClass="yoga-bg card" value="Yoga" action="classSchedule.xhtml" />
+	    <h:commandButton styleClass="taichi-bg card" value="Taichi" action="classSchedule.xhtml" />
+	    <h:commandButton styleClass="mindfulness-bg card" value="Mindfulness" action="classSchedule.xhtml" />
+	    <h:commandButton styleClass="card" value="View Schedule" action="classSchedule.xhtml" />
+ 	 </h:form>
+ 	 <div style="height:80px"></div>
+ </div>
+ <!-- end of section 4 class options -->
+ 
+ 
+ <div id="sec-5">
+ 	<h2> Membership options</h2>
+ 	<ul>
+    <li>
+     <input type="radio" id= "3Month" name="Membership" value="3Month" />
+  <label for="3Month"> 3-Month Membership</label>
+      
+      <p>Price: £30 </p>
+      
+      <P>Benefits:A member can attend One session for three months</P>
+    </li>
+    <li>
+     <input type="radio" id= "6Month" name="Membership" value="6Month" />
+  <label for="6Month"> 6-Month Membership</label>
+      
+      <p>Price: £50 </p>
+       <P>Benefits:A member can attend Two session for six months</P>
+       </li>
+    <li>
+     <input type="radio" id= "12Month" name="Membership" value="12Month" />
+  <label for="12Month"> 12-Month Membership</label>
+      
+      <p>Price: £100 </p>
+       <P>Benefits:A member can attend Three session for twelve months</P>
+       </li>
+  </ul>
+   <!-- The button element to buy membership -->
+   <!-- <button type="button" href = "html/payment.xhtml"  onclick="redirectToPayment()">Buy Now</button> -->
+</div>
+ 
+ 
+<!-- start of footer -->
+<!-- <div id="contact">
+    <div class="container">
+        <div class="contact-left">
+            <h1 class="sub">Contact Me</h1>
+            <div class="contact-details">
+                <p><i class="fas fa-paper-plane"></i> Athlone Campus, Bunnavally, Athlone, Co. Westmeath, N37 HD68</p>
+                <p><i class="fas fa-paper-plane"></i> <a href="mailto:theWrights@watersidegym.ie">theWrights@watersidegym.ie</a></p>
+                <p><i class="fas fa-phone-square-alt"></i> +353 (0)90 646 8000</p>
+            </div>
+            <div class="footer-logo">
+				<h:graphicImage name="logo.svg" library="images" />
+            </div>
+            <div class="footer-text">
+                <p>Made by CSE Team 5.</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+</h:body>
+</html>
+
+<!-- sample code -->
+<!-- <div style="height: 1000px"></div> -->
+<!--     <div class="image-container">
+        <img src="#{request.contextPath}/resources/images/index-circuits.png" alt="Image 1" />
+    </div> -->

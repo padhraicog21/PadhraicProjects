@@ -1,0 +1,463 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Body and default text styles */
+body {
+  color: #171A20;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Headings styles */
+h1, h2, h3 {
+  color: #171A20;
+  font-family: Inter;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.36px;
+  text-align: center;
+}
+
+/* Section styles */
+.section {
+  padding: 0 0 60px 0;
+}
+
+/* White button styles */
+.white-button {
+  color: #171A20;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: auto;
+  display: flex;
+  padding: 20px 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 3px solid #000;
+  background: #FFF;
+  margin-top: 20px;
+}
+
+.white-button:hover {
+  color: #FFF;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: auto;
+  display: flex;
+  padding: 20px 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 3px solid #000;
+  background: #000;
+}
+
+/* Pink button styles */
+.pink-button {
+  display: flex;
+  padding: 20px 55px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: #9C3F85;
+}
+
+/* Section 3 - Personal Training */
+#sec-3 {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #030407 0%, #161418 59.72%, #FFF 100%);
+}
+
+.text-container {
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+.text-container h1,
+.text-container h2,
+.text-container p {
+  color: #FFF;
+}
+
+.personal-image {
+  max-width: 40%;
+  border: 4px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/* Section 4 - Class Options */
+#sec-4 {
+  background: linear-gradient(180deg, #FFF 0%, #161418 59.72%, #030407 100%);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.card {
+  border: none;
+  color: #FFF;
+  text-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10px;
+  width: 30%;
+  height: 447px;
+  flex-shrink: 0;
+  border-radius: 10%;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: rgba(156, 63, 133, 0.30);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  border: none;
+  color: #FFF;
+  text-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10px;
+  width: 30%;
+  height: 447px;
+  flex-shrink: 0;
+  border-radius: 10%;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #B36F4D;
+  transform: scale(1.02);
+}
+
+/* Background images for class options */
+.circuits-bg {
+  background: url("#{request.contextPath}/resources/images/index-circuits.png");
+  background-size: cover;
+}
+
+.pilates-bg {
+  background: url("#{request.contextPath}/resources/images/index-pilates.png");
+  background-size: cover;
+}
+
+.yoga-bg {
+  background: url("#{request.contextPath}/resources/images/index-yoga.png");
+  background-size: cover;
+}
+
+.taichi-bg {
+  background: url("#{request.contextPath}/resources/images/index-taichi.png");
+  background-size: cover;
+}
+
+.mindfulness-bg {
+  background: url("#{request.contextPath}/resources/images/index-mindfulness.png");
+  background-size: cover;
+}
+
+/* Header and navigation styles */
+#header {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: url("#{request.contextPath}/resources/images/back.png");
+}
+
+.container {
+  padding: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 2px solid #333;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #333;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  padding-left: 50px;
+  width: 60px;
+  height: 60px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  color: white;
+  font-family: Inter;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.36px;
+  margin-bottom: 20px;
+}
+
+.header-text p {
+  text-align: center;
+  color: white;
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.36px;
+}
+
+.header-text h1 span {
+  color: #333;
+}
+
+/* Free page section */
+#portfolio {
+  padding: 50px 0;
+  background: linear-gradient(180deg, #FFF 0%, #161418 59.72%, #030407 100%);
+}
+
+.sub-title {
+  color: white;
+}
+
+.work-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 105px;
+  margin-top: 50px;
+}
+
+.work {
+  flex: 0 0 calc(33.33% - 40px);
+  max-width: 300px;
+  height: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.work h3 {
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.layer {
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.layer h3 {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.layer p {
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.layer a {
+  margin-top: 20px;
+  color: #ff004f;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  background: #fff;
+  width: 120px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.layer a:hover {
+  background: #ff004f;
+  color: #fff;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  opacity: 1;
+  height: 100%;
+}
+
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ff004f;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #ff004f;
+}
+
+.btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer - Contact section */
+#contact {
+  background-color: #f9f9f9;
+  padding: 30px 0;
+}
+
+.contact-left {
+  text-align: center;
+}
+
+.sub {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-left p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+/* Copyright section */
+.copyright {
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}

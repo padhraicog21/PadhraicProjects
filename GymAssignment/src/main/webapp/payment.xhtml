@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Check Out</title>
+    <h:outputStylesheet name="stylesPayment.css" library="css" />
+</h:head>
+<h:body>
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h:form>
+                <h:outputLabel for="membershipType" styleClass="input-label">Membership Type:</h:outputLabel>
+                <h:selectOneMenu id="membershipType" value="#{authorizePayment.product}" styleClass="input-field">
+                    <f:selectItem itemValue="3 Month Membership" itemLabel="3 Month Membership" />
+                    <f:selectItem itemValue="6 Month Membership" itemLabel="6 Month Membership" />
+                    <f:selectItem itemValue="12 Month Membership" itemLabel="12 Month Membership" />
+                    <f:ajax listener="#{authorizePayment.calculateTotal}" render="total"/>
+                </h:selectOneMenu>
+                <br/>
+
+                <h:outputLabel for="name" styleClass="input-label">Name:</h:outputLabel>
+                <h:inputText id="name" value="#{authorizePayment.name}" styleClass="input-field" /><br/>
+
+                <h:outputLabel for="phoneNumber" styleClass="input-label">Phone Number:</h:outputLabel>
+                <h:inputText id="phoneNumber" value="#{authorizePayment.phoneNumber}" styleClass="input-field" /><br/>
+
+                <h:outputLabel for="email" styleClass="input-label">Email:</h:outputLabel>
+                <h:inputText id="email" value="#{authorizePayment.email}" styleClass="input-field" /><br/>
+
+                <h:outputLabel for="username" styleClass="input-label">Username:</h:outputLabel>
+                <h:inputText id="username" value="#{authorizePayment.username}" styleClass="input-field" /><br/>
+
+                <h:outputLabel for="password" styleClass="input-label">Password:</h:outputLabel>
+                <h:inputSecret id="password" value="#{authorizePayment.password}" styleClass="input-field" /><br/>
+
+                <h:outputLabel for="age" styleClass="input-label">Age:</h:outputLabel>
+                <h:inputText id="age" value="#{authorizePayment.age}" styleClass="input-field" /><br/>
+
+                <h:panelGroup layout="block" class="total-box">
+                    <h:outputLabel for="total" styleClass="total-label">Total Amount:</h:outputLabel>
+                    <h:outputText id="total" value="€#{authorizePayment.total}" styleClass="total-amount" />
+                </h:panelGroup>
+                <br/>
+
+                <h:outputLabel for="paymentMethod" styleClass="input-label">Payment Method:</h:outputLabel>
+                <h:selectOneMenu id="paymentMethod" value="#{authorizePayment.paymentMethod}" styleClass="input-field">
+                    <f:selectItem itemValue="paypal" itemLabel="PayPal" />
+                    <f:selectItem itemValue="cash" itemLabel="Cash" />
+                </h:selectOneMenu>
+                <br/>
+
+                <h:commandButton action="#{authorizePayment.checkOut}" value="Checkout" class="btn"/><br/>
+            </h:form>
+            <a href="homepage.xhtml" class="btn">Home</a>
+            <h:messages globalOnly="true" styleClass="error-message" />
+        </div>
+    </div>
+</h:body>
+</html>
+
+
